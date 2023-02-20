@@ -46,7 +46,7 @@ class ProjectTheme {
       fontWeight: FontWeight.w700,
       fontSize: 24,
       height: 1.3,
-      color: ColorPalette.black,
+      color: ColorPalette.white,
     ),
     displayMedium: GoogleFonts.openSans(
       fontWeight: FontWeight.w500,

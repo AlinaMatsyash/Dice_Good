@@ -1,7 +1,9 @@
 import 'dart:async';
-import 'package:dice_good/screens/menu/screen.dart';
+import 'package:dice_good/bloc/dice_bloc.dart';
+import 'package:dice_good/screens/home/screen.dart';
 import 'package:dice_good/theme/color_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -15,7 +17,11 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
         const Duration(seconds: 3),
         () => Navigator.of(context).pushReplacement(MaterialPageRoute(
-            builder: (BuildContext context) => MainWindow())));
+              builder: (BuildContext context) => BlocProvider(
+                create: (_) => DiceBloc(),
+                child: DiceScreen(),
+              ),
+            )));
   }
 
   @override
